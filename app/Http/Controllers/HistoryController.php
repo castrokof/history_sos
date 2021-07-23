@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\models\history;
 use Illuminate\Http\Request;
 
 class HistoryController extends Controller
@@ -11,11 +12,64 @@ class HistoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+
+        $type_document=$request->type_document;
+        $document=$request->document;
+
+
+        if($request->ajax()){
+
+            if($type_document != null && $document != null) {
+
+            $datas = history::orderBy('id')
+            ->where([
+                ["type_document", "=", $type_document],
+                ["document", "=", $document]
+
+            ])
+            ->get();
+
+            return  DataTables()->of($datas)
+            ->addColumn('urldetalle', function($datas){
+            $button = '<button type="button" name="edit" id="'.$datas->url.'"
+            class = "edit btn-float  bg-gradient-primary btn-sm tooltipsC"  title="Editar usuario"><i class="far fa-edit"></i></button>';
+
+          return $button;
+
+            })
+            ->rawColumns(['urldetalle'])
+            ->make(true);
+         }
+        else{
+
+
+
+                $datas = history::orderBy('id')->limit('1000')
+                ->get();
+                return  DataTables()->of($datas)
+                ->addColumn('urldetalle', function($datas){
+                $button = '<button type="button" name="edit" id="'.$datas->url.'"
+                class = "edit btn-float  bg-gradient-primary btn-sm tooltipsC"  title="Editar usuario"><i class="far fa-edit"></i></button>';
+
+              return $button;
+
+                })
+                ->rawColumns(['urldetalle'])
+                ->make(true);
+
+
+
+
+
     }
 
+
+    }
+
+    return view('home');
+    }
     /**
      * Show the form for creating a new resource.
      *
