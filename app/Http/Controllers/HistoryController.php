@@ -14,6 +14,7 @@ class HistoryController extends Controller
      */
     public function index(Request $request)
     {
+<<<<<<< HEAD
 
         $type_document=$request->type_document;
         $document=$request->document;
@@ -66,6 +67,9 @@ class HistoryController extends Controller
     }
 
 
+=======
+        return view('home');
+>>>>>>> 27d4a4a09bfb913ba34b33ec00b27ac8a0d972c1
     }
 
     return view('home');

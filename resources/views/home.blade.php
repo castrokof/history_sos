@@ -32,8 +32,13 @@
                         </div>
                     @endif
 
+<<<<<<< HEAD
 
                   <form>
+=======
+                    {{-- {{ __('You are logged in!') }} --}}
+                  <form  class="form-control">
+>>>>>>> 27d4a4a09bfb913ba34b33ec00b27ac8a0d972c1
                     @include('form-consulta')
 
                     </form>

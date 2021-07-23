@@ -28,7 +28,11 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 Route::get('/history', 'HistoryController@index')->name('history');
 
 // //Ruta que se usa para enviar por el servicio put a programar las prescripciones desde la function index
+<<<<<<< HEAD
 Route::get('/consulta_history', 'HistoryController@index')->name('consulta_history')->middleware('verified');
+=======
+// Route::post('/programar', 'HomeController@Programarm')->name('programar');
+>>>>>>> 27d4a4a09bfb913ba34b33ec00b27ac8a0d972c1
 
 // //Ruta para consultar lo programado por el regente o administrador
 // Route::get('/programado', 'HomeController@indexp')->name('programado');
