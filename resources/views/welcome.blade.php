@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Tempus SW</title>
+        <title>History SOS</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -68,13 +68,13 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{route('tokenhercules') }}">Registrar token hercules</a>
+                        <a href="{{route('history') }}">Consultar historias sos</a>
 
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">Acceder</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">Registro</a>
                         @endif
                     @endauth
                 </div>
@@ -82,7 +82,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    TEMPUS ATENCION INTEGRAL EN SALUD
+                    HISTORY SOS OPV
                 </div>
 
                 <div class="links">

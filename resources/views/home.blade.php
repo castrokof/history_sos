@@ -33,8 +33,7 @@
                     @endif
 
                     {{-- {{ __('You are logged in!') }} --}}
-                    Estatus Body: {{$statusP ?? $statusF ?? ''}}
-                    <form  action="{{route('home')}}" method="get">
+                  <form  class="form-control">
                     @include('form-consulta')
                     <button type="submit" id="consultar" class="btn btn-success">Consultar</button><button type="button" id="enviar" class="btn btn-warning">Programar</button>
                     </form>
@@ -61,66 +60,11 @@
                        </tr>
                     </thead>
                        <tbody>
-                        @foreach ($medicamentos2 ?? '' as $item3)
-                        @foreach ($item3 as $item)
-                        <tr>
-                            <td><input class="case" type="checkbox" title="Selecciona Orden" value="{{$item['ID'] ?? ''}}"></td>
-                            <td> {{$item['ID'] ?? ''}}</td>
-                            <td> {{$item['IDDireccionamiento'] ?? ''}}</td>
-                            <td> {{$item['NoPrescripcion'] ?? ''}}</td>
-                            <td>{{$item['TipoIDPaciente'] ?? ''}}</td>
-                            <td>{{$item['NoIDPaciente'] ?? ''}}</td>
-                            <td>{{$item['CantTotAEntregar'] ?? ''}}</td>
-                            <td>{{$item['NoEntrega'] ?? ''}}</td>
-                            <td>{{$item['TipoIDProv'] ?? ''}}</td>
-                            <td>{{$item['NoIDProv'] ?? ''}}</td>
-                            <td>{{$item['CodSerTecAEntregar'] ?? ''}}</td>
-                            <td>{{$item['FecMaxEnt'] ?? ''}}</td>
-                            <td>{{$item['FecDireccionamiento'] ?? ''}}</td>
-                            <td>PROV005664</td>
-                        </tr>
-                        @endforeach
-                        @endforeach
+
                         </tbody>
                         </table>
                     </div>
-                    {{-- Estatus prescripcion: {{$statusP ?? ''}}
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover">
 
-                     <thead>
-                        <tr>
-                        <th>Seleccione</th>
-                        <th>ID:</th>
-                        <th>ID Direccionamiento:</th>
-                        <th>Prescripcion:</th>
-                        <th>Tipo y numero de documento:</th>
-                        <th>Cantidad a entregar:</th>
-                        <th>Cums:</th>
-                        <th>Fecha máxima de entrega:</th>
-                        <th>Fecha Direccionamiento:</th>
-                       </tr>
-                        @foreach ($medicamentos2 ?? '' ?? '' as $item3)
-                        @foreach ($item3 as $item2)
-                    </thead>
-                        <tbody>
-                        <tr>
-                            <td><input type="checkbox" id="{{$item2['ID']}}" aria-label="Checkbox for following text input"></td>
-                            <td> {{$item2['ID']}}</td>
-                            <td> {{$item2['IDDireccionamiento']}}</td>
-                            <td> {{$item2['NoPrescripcion']}}</td>
-                            <td>{{$item2['TipoIDPaciente']}}.{{$item2['NoIDPaciente']}}</td>
-                            <td>{{$item2['CantTotAEntregar']}}</td>
-                            <td>{{$item2['CodSerTecAEntregar']}}</td>
-                            <td>{{$item2['FecMaxEnt']}}</td>
-                            <td>{{$item2['FecDireccionamiento']}}</td>
-
-                        </tr>
-                        @endforeach
-                        @endforeach
-                        </tbody>
-                        </table>
-                    </div> --}}
                 </div>
 
 
